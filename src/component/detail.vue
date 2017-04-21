@@ -64,6 +64,7 @@
             </ul>
         </div>
     </div>
+    <div v-else=""></div>
 </template>
 
 <script>
@@ -187,7 +188,7 @@
         display:table;
         margin:0 auto;
     }
-    .stuff:last-child { margin-bottom:80px; }
+    .stuff:last-child { margin-bottom:50px; }
     .stuff p {
         font-size:16px;
         margin-top:10px;
@@ -197,7 +198,8 @@
     }
     .stuff li {
         width:47%;
-        display:inline-block;
+        display:inline-flex;
+        text-align:center;
         background-color:plum;
         overflow:hidden;
         margin:10px 0;
@@ -206,16 +208,12 @@
     }
     .stuff li:nth-child(2n+1) { margin-right:6%; }
     .stuff div {
-        width:50%;
+        flex:1;
         padding-top:66%;
-        display:inline-block;
     }
     .stuff span {
-        display:inline-block;
-        width:46%;
+        flex:1;
         font-size:12px;
-        vertical-align:top;
-        text-align:center;
-        margin:8px 1%;
+        margin:8px 0;
     }
 </style>

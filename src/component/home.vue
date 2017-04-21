@@ -33,5 +33,5 @@
 </script>
 
 <style>
-    .home { position:relative; height:100vh; }
+    .home { position:relative;}
 </style>

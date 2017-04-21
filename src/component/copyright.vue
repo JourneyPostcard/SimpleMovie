@@ -12,6 +12,10 @@
 </script>
 
 <style>
-    .copyright { width:100%; font-size:14px; text-align:center; position:fixed; bottom:0; z-index:-1; color:#4a9871; }
+    .copyright {
+        font-size: 14px;
+        text-align: center;
+        color: #4a9871;
+    }
     .copyright p { padding:10px; line-height:25px; height:50px; }
 </style>

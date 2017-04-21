@@ -33,4 +33,11 @@
     img, a, p, span, h1, h2, h3, ul, ol, li, select, input, dl, dt, dd, table, tr, td, em, div { -webkit-tap-highlight-color:rgba(255, 255, 255, 0); padding:0; margin:0; border:0; text-decoration:none; list-style:none; font-style:normal; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
     select, input, img /*,em,b,u,i*/ { vertical-align:middle; -webkit-appearance:none; outline:none; }
     body { background-color:#326b32; }
+
+    #app{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+    }
 </style>

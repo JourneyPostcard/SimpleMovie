@@ -45,7 +45,7 @@
 </script>
 
 <style>
-    .search { position:relative; min-height:100vh; }
+    .search { position:relative; }
     .search p {
         white-space:nowrap;
         height:40px;
@@ -82,34 +82,29 @@
     .search > span i:nth-child(2) { right:45px; }
     .search ul {
         font-size:0;
-        padding-bottom:50px;
         border-top:1px solid transparent;
         box-sizing:border-box;
     }
     .search li {
-        width:80%;
-        margin:10% auto;
-        box-sizing:border-box;
-        cursor:pointer;
-        background:#ff3a3a;
-        border-radius:4px;
-        overflow:hidden;
-        position:relative;
+        width: 80%;
+        display: flex;
+        margin: 10% auto;
+        box-sizing: border-box;
+        cursor: pointer;
+        background: #ff3a3a;
+        border-radius: 4px;
+        overflow: hidden;
     }
     .search ul div {
-        width:40%;
-        padding-top:56%;
-        display:inline-block;
+        flex: 4;
+        padding-top: 56%;
     }
     .search ul span {
-        width:60%;
-        font-size:16px;
-        text-align:center;
-        color:antiquewhite;
-        transform:translateY(-50%);
-        top:50%;
-        position:absolute;
-        padding:10px;
-        box-sizing:border-box;
+        flex: 6;
+        font-size: 16px;
+        color: antiquewhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
