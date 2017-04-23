@@ -22,36 +22,52 @@
     }
 </script>
 
-<style>
-    .list { width:100%; }
-    .list ul { overflow:hidden; display:table; margin:0 auto; width:80%; padding:10px; }
-    .list li {
-        display:inline-block;
-        width:21%;
-        margin:2%;
-        box-sizing:border-box;
-        cursor:pointer;
-        background:#ff3a3a;
-        border-radius:4px;
-        overflow:hidden;
-    }
-    .list div { width:100%; padding-top:140%; }
-    .list p {
-        width:80%;
-        display:inline-block;
-        padding:2px 0 0 5px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        color:#00ffff;
-    }
-    .list span {
-        color:yellow;
-        display:inline-block;
-        padding:0 7px 5px 0;
-        text-align:right;
+<style lang="scss">
+    .list {
         width:100%;
-        box-sizing:border-box;
+
+        ul {
+            overflow:hidden;
+            display:table;
+            margin:0 auto;
+            width:80%;
+            padding:10px;
+
+            li {
+                display:inline-block;
+                width:21%;
+                margin:2%;
+                box-sizing:border-box;
+                cursor:pointer;
+                background:#ff3a3a;
+                border-radius:4px;
+                overflow:hidden;
+
+                div {
+                    width:100%;
+                    padding-top:140%;
+                }
+
+                p {
+                    width:80%;
+                    display:inline-block;
+                    padding:2px 0 0 5px;
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    color:#00ffff;
+                }
+
+                span {
+                    color:yellow;
+                    display:inline-block;
+                    padding:0 7px 5px 0;
+                    text-align:right;
+                    width:100%;
+                    box-sizing:border-box;
+                }
+            }
+        }
     }
     /*.list-enter-active, .list-leave-active {
         transition:all .3s ease-in;

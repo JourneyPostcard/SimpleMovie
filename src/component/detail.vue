@@ -1,6 +1,6 @@
 <template>
     <div class="detail" v-if="detail" @click="hideside">
-        <header>
+        <header class="header">
             <div class="back" :style="'background:url('+detail.images.large+') no-repeat center/cover;'"></div>
             <div class="front">
                 <span :style="'background:url('+detail.images.large+') no-repeat center/cover;'"></span>
@@ -96,83 +96,111 @@
     }
 </script>
 
-<style>
-    .detail { color:#000; }
-    .detail header {
+<style lang="scss">
+    .detail {
+        color:#000;
+    }
+    .header {
         width:100%;
         height:40vh;
         position:relative;
         background-color:#000;
         margin-bottom:70px;
-    }
-    .back { filter:blur(10px); background-color:#000; width:100%; height:100%; }
-    .front {
-        position:absolute;
-        z-index:1;
-        bottom:-30px;
-        left:0;
-        width:100%;
-        font-weight:bolder;
-    }
-    .front::after {
-        content:'';
-        display:inline-block;
-        width:100%;
-        position:absolute;
-        bottom:0;
-        height:60px;
-        background-color:rgba(0, 255, 255, 0.3);
-        left:0;
-        z-index:-1;
-    }
-    .front span {
-        position:absolute;
-        bottom:0;
-        width:30%;
-        padding-top:42%;
-        left:10%;
-    }
-    .front p { font-size:18px; position:absolute; bottom:0; left:45%; height:60px; line-height:30px; color:#962a2a; }
-    .detail i {
-        position:absolute;
-        color:#FE007F;
-        cursor:pointer;
-        height:25px;
-        line-height:25px;
-        width:25px;
-        font-size:25px;
-    }
-    .detail i:first-of-type {
-        top:20px;
-        right:20px;
-    }
-    .detail i:nth-of-type(2) {
-        top:20px;
-        right:60px;
+
+        .back {
+            filter:blur(10px);
+            background-color:#000;
+            width:100%;
+            height:100%;
+        }
+        .front {
+            position:absolute;
+            z-index:1;
+            bottom:-30px;
+            left:0;
+            width:100%;
+            font-weight:bolder;
+
+            &::after {
+                content:'';
+                display:inline-block;
+                width:100%;
+                position:absolute;
+                bottom:0;
+                height:60px;
+                background-color:rgba(0, 255, 255, 0.3);
+                left:0;
+                z-index:-1;
+            }
+
+            span {
+                position:absolute;
+                bottom:0;
+                width:30%;
+                padding-top:42%;
+                left:10%;
+            }
+
+            p {
+                font-size:18px;
+                position:absolute;
+                bottom:0; left:45%;
+                height:60px;
+                line-height:30px;
+                color:#962a2a;
+            }
+        }
+
+        i {
+            position:absolute;
+            color:#FE007F;
+            cursor:pointer;
+            height:25px;
+            line-height:25px;
+            width:25px;
+            font-size:25px;
+
+            &:first-of-type {
+                top:20px;
+                right:20px;
+            }
+
+            &:nth-of-type(2) {
+                top:20px;
+                right:60px;
+            }
+        }
     }
     .summary {
         width:80%;
         overflow:hidden;
         margin:0 10%;
-    }
-    .summary li {
-        float:left;
-        width:50%;
-        font-size:15px;
-        font-family:cursive;
-        height:50px;
-        position:relative;
-    }
-    .summary p { display:inline-block; position:absolute; left:0; }
-    .summary span {
-        color:#00ffff;
-        position:absolute;
-        right:20px;
-        width:65%;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        text-align:right;
+
+        li {
+            float:left;
+            width:50%;
+            font-size:15px;
+            font-family:cursive;
+            height:50px;
+            position:relative;
+
+            p {
+                display:inline-block;
+                position:absolute;
+                left:0;
+            }
+
+            span {
+                color:#00ffff;
+                position:absolute;
+                right:20px;
+                width:65%;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                text-align:right;
+            }
+        }
     }
     .description {
         width:100%;
@@ -187,33 +215,44 @@
         width:90%;
         display:table;
         margin:0 auto;
-    }
-    .stuff:last-child { margin-bottom:50px; }
-    .stuff p {
-        font-size:16px;
-        margin-top:10px;
-    }
-    .stuff ul {
-        font-size:0;
-    }
-    .stuff li {
-        width:47%;
-        display:inline-flex;
-        text-align:center;
-        background-color:plum;
-        overflow:hidden;
-        margin:10px 0;
-        border-radius:2%;
-        color:brown;
-    }
-    .stuff li:nth-child(2n+1) { margin-right:6%; }
-    .stuff div {
-        flex:1;
-        padding-top:66%;
-    }
-    .stuff span {
-        flex:1;
-        font-size:12px;
-        margin:8px 0;
+
+        &:last-child {
+            margin-bottom:50px;
+        }
+
+        p {
+            font-size:16px;
+            margin-top:10px;
+        }
+
+        ul {
+            font-size:0;
+
+            li {
+                width:47%;
+                display:inline-flex;
+                text-align:center;
+                background-color:plum;
+                overflow:hidden;
+                margin:10px 0;
+                border-radius:2%;
+                color:brown;
+
+                &:nth-child(2n+1) {
+                    margin-right:6%;
+                }
+
+                div {
+                    flex:1;
+                    padding-top:66%;
+                }
+
+                span {
+                    flex:1;
+                    font-size:12px;
+                    margin:8px 0;
+                }
+            }
+        }
     }
 </style>

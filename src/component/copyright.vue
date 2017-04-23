@@ -11,11 +11,16 @@
 <script>
 </script>
 
-<style>
+<style lang="scss">
     .copyright {
-        font-size: 14px;
-        text-align: center;
-        color: #4a9871;
+        font-size:14px;
+        text-align:center;
+        color:#4a9871;
+
+        p {
+            padding:10px;
+            line-height:25px;
+            height:50px;
+        }
     }
-    .copyright p { padding:10px; line-height:25px; height:50px; }
 </style>

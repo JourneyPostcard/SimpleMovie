@@ -44,67 +44,84 @@
     }
 </script>
 
-<style>
-    .search { position:relative; }
-    .search p {
-        white-space:nowrap;
-        height:40px;
-        line-height:40px;
+<style lang="scss">
+    .search {
         position:relative;
-        font-size:0;
-        width:50%;
-        margin:0 auto;
-        background-color:skyblue;
-    }
-    .search input {
-        font-size:16px;
-        width:100%;
-        height:100%;
-        background-color:#e5dfdf;
-        padding:0 20px;
-        color:#666;
-        box-sizing:border-box;
-        background-color:inherit;
-    }
-    .search i {
-        position:absolute;
-        right:0;
-        top:0;
-        width:40px;
-        height:100%;
-        background-color:inherit;
-        text-align:center;
-        color:#fff;
-        cursor:pointer;
-    }
-    .search > span { position:absolute; right:0; top:0; height:40px; line-height:40px; }
-    .search > span i:first-child { right:5px; }
-    .search > span i:nth-child(2) { right:45px; }
-    .search ul {
-        font-size:0;
-        border-top:1px solid transparent;
-        box-sizing:border-box;
-    }
-    .search li {
-        width: 80%;
-        display: flex;
-        margin: 10% auto;
-        box-sizing: border-box;
-        cursor: pointer;
-        background: #ff3a3a;
-        border-radius: 4px;
-        overflow: hidden;
-    }
-    .search ul div {
-        flex: 4;
-        padding-top: 56%;
-    }
-    .search ul span {
-        flex: 6;
-        font-size: 16px;
-        color: antiquewhite;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+        p {
+            white-space:nowrap;
+            height:40px;
+            line-height:40px;
+            position:relative;
+            font-size:0;
+            width:50%;
+            margin:0 auto;
+            background-color:skyblue;
+
+            input {
+                font-size:16px;
+                width:100%;
+                height:100%;
+                background-color:#e5dfdf;
+                padding:0 20px;
+                color:#666;
+                box-sizing:border-box;
+                background-color:inherit;
+            }
+        }
+
+        i {
+            position:absolute;
+            right:0;
+            top:0;
+            width:40px;
+            height:100%;
+            background-color:inherit;
+            text-align:center;
+            color:#fff;
+            cursor:pointer;
+        }
+
+        & > span {
+            position:absolute;
+            right:0;
+            top:0;
+            height:40px;
+            line-height:40px;
+
+            i:first-child { right:5px; }
+            i:nth-child(2) { right:45px; }
+        }
+
+        ul {
+            font-size:0;
+            border-top:1px solid transparent;
+            box-sizing:border-box;
+
+            li {
+                width:80%;
+                display:flex;
+                margin:10% auto;
+                box-sizing:border-box;
+                cursor:pointer;
+                background:#ff3a3a;
+                border-radius:4px;
+                overflow:hidden;
+
+                div {
+                    flex:4;
+                    padding-top:56%;
+                }
+
+                span {
+                    flex:6;
+                    font-size:16px;
+                    color:antiquewhite;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+            }
+        }
     }
 </style>

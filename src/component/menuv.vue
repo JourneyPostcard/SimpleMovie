@@ -30,23 +30,33 @@
     }
 </script>
 
-<style>
-    .menuv { background:#474a4f; text-align:center; height:50px; line-height:50px; font-family:楷体; position:relative; }
-    .menuv h1 { color:#FE007F; }
-    .menuv div {
-        position:absolute;
-        top:50%;
-        right:0;
-    }
-    .menuv i {
-        transform:translateY(-50%);
-        color:#FE007F;
-        cursor:pointer;
-        height:25px;
-        line-height:25px;
-        width:25px;
-        font-weight:bolder;
-        float:right;
-        margin-right:5px;
+<style lang="scss">
+    .menuv {
+        background:#474a4f;
+        text-align:center;
+        height:50px;
+        line-height:50px;
+        font-family:楷体;
+        position:relative;
+
+        h1 { color:#FE007F; }
+
+        div {
+            position:absolute;
+            top:50%;
+            right:0;
+
+            i {
+                transform:translateY(-50%);
+                color:#FE007F;
+                cursor:pointer;
+                height:25px;
+                line-height:25px;
+                width:25px;
+                font-weight:bolder;
+                float:right;
+                margin-right:5px;
+            }
+        }
     }
 </style>
