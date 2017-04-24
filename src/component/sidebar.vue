@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <aside class="sidebar">
         <div class="banner">{{sidetitle}}</div>
         <div class="items">
             <div>
@@ -16,7 +16,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </aside>
 </template>
 
 <script>

@@ -2,14 +2,14 @@
     <div class="detail" v-if="detail" @click="hideside">
         <header class="header">
             <div class="back" :style="'background:url('+detail.images.large+') no-repeat center/cover;'"></div>
-            <div class="front">
+            <figure class="front">
                 <span :style="'background:url('+detail.images.large+') no-repeat center/cover;'"></span>
-                <p>
+                <figcaption>
                     {{detail.title}}
                     <br>
                     {{detail.rating.average}}
-                </p>
-            </div>
+                </figcaption>
+            </figure>
             <!--<router-link tag="i" to="/home">&#xe6cb;</router-link>router-link无法显示iconfont-->
             <i @click="$router.push('/home')" class="iconfont">&#xe6cb;</i>
             <i onclick="event.cancelBubble=true;" class="iconfont" @click="toggleside">&#xe6b7;</i>
@@ -46,7 +46,7 @@
                 <p>影评数量</p>
                 <span>{{detail.reviews_count}}</span></li>
         </ul>
-        <p class="description">{{detail.summary}}</p>
+        <article class="description">{{detail.summary}}</article>
         <div class="stuff">
             <p>导演</p>
             <ul>
@@ -120,10 +120,10 @@
             left:0;
             width:100%;
             font-weight:bolder;
+            margin: 0;
 
             &::after {
                 content:'';
-                display:inline-block;
                 width:100%;
                 position:absolute;
                 bottom:0;
@@ -141,7 +141,7 @@
                 left:10%;
             }
 
-            p {
+            figcaption {
                 font-size:18px;
                 position:absolute;
                 bottom:0; left:45%;
