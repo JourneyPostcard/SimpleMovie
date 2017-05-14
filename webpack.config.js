@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 var path = require('path')
 
 module.exports = {
@@ -35,5 +36,11 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins:[
+        //minify压缩js
+        new webpack.optimize.UglifyJsPlugin(),
+        //js顶部添加banner(注释)
+        new webpack.BannerPlugin('This file is created by CZH')
+    ]
 }

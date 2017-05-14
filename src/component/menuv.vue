@@ -4,7 +4,7 @@
         <div>
             <!--阻止事件冒泡-->
             <i onclick="event.cancelBubble=true;" class="iconfont" @click="toggleside">&#xe6b7;</i>
-            <i class="iconfont" @click="fresh">&#xe6a0;</i>
+            <i class="iconfont" @click="$emit('fresh')">&#xe6a0;</i>
             <i class="iconfont" @click="$router.push('/search')">&#xe6a4;</i>
         </div>
     </header>
@@ -20,9 +20,6 @@
             ])
         },
         methods: {
-            fresh(){
-                this.$emit('fresh')
-            },
             ...Vuex.mapMutations([
                 'toggleside'
             ])
