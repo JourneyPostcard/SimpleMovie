@@ -11,7 +11,7 @@
             <i onclick="event.cancelBubble=true;" class="iconfont" @click="toggleside">&#xe6b7;</i>
         </span>
         <ul>
-            <router-link tag="li" v-for="(item, index) in searchlist" key :to="'/detail/'+item.id">
+            <router-link tag="li" v-for="(item, index) in searchlist" :to="'/detail/'+item.id" key>
                 <div :style="'background:url('+item.images.large+') no-repeat center/cover;'"></div>
                 <span>{{item.title}}</span>
             </router-link>

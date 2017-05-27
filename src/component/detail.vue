@@ -50,7 +50,7 @@
         <div class="stuff">
             <p>导演</p>
             <ul>
-                <li v-for="(item, index) in detail.directors" key>
+                <li v-for="(item, index) in detail.directors">
                     <div :style="'background:url('+(item.avatars!=null?item.avatars.large:'')+') no-repeat center/cover;'"></div>
                     <span>{{item.name}}</span></li>
             </ul>
@@ -58,7 +58,7 @@
         <div class="stuff">
             <p>主演</p>
             <ul>
-                <li v-for="(item, index) in detail.casts" key>
+                <li v-for="(item, index) in detail.casts">
                     <div :style="'background:url('+(item.avatars!=null?item.avatars.large:'')+') no-repeat center/cover;'"></div>
                     <span>{{item.name}}</span></li>
             </ul>

@@ -14,7 +14,15 @@ export default new Vuex.Store({
     },
     mutations: {
         setrate(s, p){
-            s.ratelist.push(p)
+            s.ratelist = p.slice()
+        },
+        addimg(s, p){
+            //以下两种方法都触发渲染。但没有动态绑定:key（而且得是变化的值），所以只渲染innerHTML，而不重新渲染此元素
+            Vue.set(s.ratelist[p.index], 'img', p.img)
+            //s.ratelist.splice(p.index, 1, {...s.ratelist[p.index], img: p.img})
+
+            //添加成功，但不会触发渲染（连innerHTML都不重新渲染）
+            //s.ratelist[p.index].img = p.img
         },
         clearrate(s){
             s.ratelist.splice(0, s.ratelist.length)
@@ -49,10 +57,11 @@ export default new Vuex.Store({
                 let arr = res.data.subjects
                 commit('clearrate')
                 setTimeout(function () {
+                    commit('setrate', arr)
                     for (let i = 0, length = arr.length; i < length; i++) {
                         let img = new Image()
                         img.onload = function () {
-                            commit('setrate', arr[i])
+                            commit('addimg', {index: i, img: img.src})
                         }
                         img.src = arr[i].subject.images.large
                     }

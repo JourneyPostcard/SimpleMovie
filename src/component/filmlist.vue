@@ -1,12 +1,18 @@
 <template>
     <div class="list">
-        <transition-group tag="ul" name="list">
-            <router-link tag="li" v-for="(item, index) in ratelist" key :to="'/detail/'+item.subject.id">
-                <div :style="'background:url('+item.subject.images.large+') no-repeat center/cover;'"></div>
-                <p>{{item.subject.title}}</p>
-                <span>{{item.subject.rating.average}}</span>
+        <ul>
+            <router-link tag="li" v-for="(item, index) in ratelist" :to="'/detail/'+item.subject.id" key>
+                <transition name="expand">
+                    <a href="" v-if="item.img" key>
+                        <div class="movie-post"
+                             :style="'background:url('+item.img+') no-repeat center/cover;'"></div>
+                        <div class="movie-title">
+                            <p>{{item.subject.title}}</p><span>{{item.subject.rating.average}}</span>
+                        </div>
+                    </a>
+                </transition>
             </router-link>
-        </transition-group>
+        </ul>
     </div>
 </template>
 
@@ -37,21 +43,33 @@
                 display:inline-block;
                 width:21%;
                 margin:2%;
-                box-sizing:border-box;
-                cursor:pointer;
-                background:#ff3a3a;
-                border-radius:4px;
-                overflow:hidden;
+                padding-top:29.4%;
+                height:40px;
+                position:relative;
 
-                div {
+                a {
+                    position:absolute;
+                    left:0;
+                    top:0;
                     width:100%;
+                    overflow:hidden;
+                    border-radius:4px;
+                }
+
+                .movie-post {
                     padding-top:140%;
+                }
+
+                .movie-title {
+                    background:#ff3a3a;
+                    font-size:12px;
+                    height:40px;
+                    line-height:20px;
                 }
 
                 p {
                     width:80%;
-                    display:inline-block;
-                    padding:2px 0 0 5px;
+                    padding-left:5px;
                     white-space:nowrap;
                     overflow:hidden;
                     text-overflow:ellipsis;
@@ -61,7 +79,7 @@
                 span {
                     color:yellow;
                     display:inline-block;
-                    padding:0 7px 5px 0;
+                    padding-right:5px;
                     text-align:right;
                     width:100%;
                     box-sizing:border-box;
@@ -69,19 +87,11 @@
             }
         }
     }
-    /*.list-enter-active, .list-leave-active {
-        transition:all .3s ease-in;
-    }
-    .list-enter, .list-leave-active {
-        opacity:0;
-        -webkit-transform:scale(0);
-    }*/
-    .list-enter-active {
+    .expand-enter-active {
         animation:showup .8s;
     }
-    .list-leave-active {
+    .expand-leave-active {
         animation:vanish .5s;
-        /*position:absolute;*/
     }
     @keyframes showup {
         0% {
