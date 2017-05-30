@@ -56,4 +56,11 @@
             }
         }
     }
+    @media(max-width:375px) {
+        .menuv {
+            height:80px;
+
+            div { top:70%; }
+        }
+    }
 </style>
