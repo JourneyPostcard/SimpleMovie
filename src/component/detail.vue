@@ -12,7 +12,7 @@
             </figure>
             <!--<router-link tag="i" to="/home">&#xe6cb;</router-link>router-link无法显示iconfont-->
             <i @click="$router.push('/home')" class="iconfont">&#xe6cb;</i>
-            <i onclick="event.cancelBubble=true;" class="iconfont" @click="toggleside">&#xe6b7;</i>
+            <i class="iconfont" @click="toggleside();$stopBubble($event)">&#xe6b7;</i>
         </header>
         <ul class="summary">
             <li>
@@ -120,7 +120,7 @@
             left:0;
             width:100%;
             font-weight:bolder;
-            margin: 0;
+            margin:0;
 
             &::after {
                 content:'';
