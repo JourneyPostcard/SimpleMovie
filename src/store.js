@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 import axios from 'axios'
+import tool from './tool'
 
 export default new Vuex.Store({
     state: {
@@ -59,11 +60,9 @@ export default new Vuex.Store({
                 setTimeout(function () {
                     commit('setrate', arr)
                     for (let i = 0, length = arr.length; i < length; i++) {
-                        let img = new Image()
-                        img.onload = function () {
-                            commit('addimg', {index: i, img: img.src})
-                        }
-                        img.src = arr[i].subject.images.large
+                        tool.loadImageAsync(arr[i].subject.images.large).then(function (value) {
+                            commit('addimg', {index: i, img: value})
+                        })
                     }
                 }, 500)
 
