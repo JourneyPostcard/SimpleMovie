@@ -24,7 +24,7 @@
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
     "http-proxy-middleware": "^0.17.4",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.5.3",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "vue-loader": "^11.3.4",
